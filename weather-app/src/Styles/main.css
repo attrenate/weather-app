@@ -1,4 +1,21 @@
 body {
   background-color: #f4f4f4;
   font-family: sans-serif;
+  border-radius: 10px;
+}
+
+h1 {
+  color: aqua;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: flex;
+  justify-self: center;
+}
+
+#search {
+  width: 200px;
+  height: 25px;
+  border-radius: 5px;
+  border-color: none;
+  display: flex;
+  justify-self: center;
 }/*# sourceMappingURL=main.css.map */

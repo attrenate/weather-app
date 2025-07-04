@@ -1,7 +1,9 @@
 
 function SearchBar(){
     return(
-        <div>Hello </div>
+        <div className="Searchbar">
+            <input type="text" name="" id="search" placeholder="Search for the city..." />
+        </div>
     );
 }
 

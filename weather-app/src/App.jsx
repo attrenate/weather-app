@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import SearchBar from './Components/SearchBar';
 import './Styles/main.scss';
-import Weather from "./Weather";
+import ForecastCard from './Components/ForecastCard';
 
 
 
@@ -12,7 +12,7 @@ function App() {
     <>
      <h1>Weather App</h1>
      <SearchBar />
-     <Weather />
+     <ForecastCard />
     </>
   )
 }
