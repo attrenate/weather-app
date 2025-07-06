@@ -1,23 +1,114 @@
-// mixins
-@mixin center{
+// Variables
+$primary-color: aqua;
+$text-color: #333;
+$card-bg: #fff;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$border-radius: 12px;
+$font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+// Mixins
+@mixin center-flex {
   display: flex;
-  justify-self: center;
+  justify-content: center;
+  align-items: center;
 }
+
+@mixin box-shadow($color) {
+  box-shadow: 0 4px 8px $color;
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 600px) { @content; }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 900px) { @content; }
+  }
+}
+
 
 body {
   background-color: #f4f4f4;
-  font-family: sans-serif;
-  border-radius: 10px;
+  font-family: $font-family;
+  border-radius: $border-radius;
+  color: $text-color;
 }
-h1{
-  color: aqua;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  @include center();
+
+h1 {
+  color: $primary-color;
+  font-family: $font-family;
+  @include center-flex();
+  padding: 20px 0;
 }
-#search{
+
+#search {
   width: 200px;
-  height: 25px;
-  border-radius: 5px;
-  border-color: none;
-  @include center();
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+  padding: 0 10px;
+  font-size: 16px;
+  @include center-flex();
+  margin: 10px auto;
+  display: block;
+
+  &:focus {
+    outline: 2px solid $primary-color;
+  }
+}
+
+.forecast-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px;
+}
+
+.forecast-day-card {
+  background: $card-bg;
+  border-radius: $border-radius;
+  padding: 16px;
+  width: 180px;
+  text-align: center;
+  color: $text-color;
+  transition: transform 0.2s ease;
+  @include box-shadow($shadow-color);
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.03);
+    @include box-shadow(rgba(0, 0, 0, 0.15));
+  }
+
+  p {
+    margin: 8px 0;
+    font-size: 16px;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+@include respond-to(phone) {
+  .forecast-day-card {
+    width: 140px;
+    padding: 12px;
+
+    p {
+      font-size: 14px;
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  #search {
+    width: 160px;
+    height: 28px;
+  }
 }

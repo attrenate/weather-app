@@ -1,21 +1,82 @@
 body {
   background-color: #f4f4f4;
-  font-family: sans-serif;
-  border-radius: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border-radius: 12px;
+  color: #333;
 }
 
 h1 {
   color: aqua;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
-  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
 }
 
 #search {
   width: 200px;
-  height: 25px;
-  border-radius: 5px;
-  border-color: none;
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+  padding: 0 10px;
+  font-size: 16px;
   display: flex;
-  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  display: block;
+}
+#search:focus {
+  outline: 2px solid aqua;
+}
+
+.forecast-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px;
+}
+
+.forecast-day-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  width: 180px;
+  text-align: center;
+  color: #333;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.forecast-day-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.forecast-day-card p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+.forecast-day-card img {
+  width: 50px;
+  height: 50px;
+}
+
+@media (max-width: 600px) {
+  .forecast-day-card {
+    width: 140px;
+    padding: 12px;
+  }
+  .forecast-day-card p {
+    font-size: 14px;
+  }
+  .forecast-day-card img {
+    width: 40px;
+    height: 40px;
+  }
+  #search {
+    width: 160px;
+    height: 28px;
+  }
 }/*# sourceMappingURL=main.css.map */
